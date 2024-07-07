@@ -245,13 +245,14 @@
       "instances": [
         {
           "angle": 0,
-          "customSize": false,
-          "height": 0,
+          "customSize": true,
+          "depth": 48,
+          "height": 96,
           "keepRatio": true,
           "layer": "",
-          "name": "Button",
+          "name": "ButtonMoveToLeft",
           "persistentUuid": "c37b7f2c-d4f4-4736-a0a0-2760001e0a7e",
-          "width": 0,
+          "width": 192,
           "x": 352,
           "y": 576,
           "zOrder": 1,
@@ -268,8 +269,8 @@
           "name": "Item",
           "persistentUuid": "819c0257-306d-449c-bd5a-9760ba5807d7",
           "width": 0,
-          "x": 223,
-          "y": 420,
+          "x": 703,
+          "y": 157,
           "zOrder": 7,
           "numberProperties": [
             {
@@ -289,8 +290,8 @@
           "name": "Item",
           "persistentUuid": "2e578ae2-c385-4941-82b8-5af66a4bbbdb",
           "width": 0,
-          "x": 416,
-          "y": 352,
+          "x": 415,
+          "y": 157,
           "zOrder": 7,
           "numberProperties": [
             {
@@ -310,8 +311,8 @@
           "name": "Item",
           "persistentUuid": "2386cffe-0d76-4d7d-a3cf-9d16653c93be",
           "width": 0,
-          "x": 799,
-          "y": 356,
+          "x": 895,
+          "y": 253,
           "zOrder": 7,
           "numberProperties": [],
           "stringProperties": [],
@@ -327,7 +328,7 @@
           "persistentUuid": "6ae57a31-c2d5-42df-9f2f-65b3d6ef7576",
           "width": 0,
           "x": 415,
-          "y": 484,
+          "y": 253,
           "zOrder": 7,
           "numberProperties": [],
           "stringProperties": [],
@@ -342,8 +343,8 @@
           "name": "Item",
           "persistentUuid": "73f7a883-8031-4c62-b278-7c9a6b0b3e62",
           "width": 0,
-          "x": 319,
-          "y": 420,
+          "x": 703,
+          "y": 253,
           "zOrder": 7,
           "numberProperties": [
             {
@@ -363,8 +364,8 @@
           "name": "Item",
           "persistentUuid": "5af746c4-588d-4127-b7ec-d8b0d1ed7cd3",
           "width": 0,
-          "x": 287,
-          "y": 516,
+          "x": 511,
+          "y": 157,
           "zOrder": 7,
           "numberProperties": [
             {
@@ -377,15 +378,16 @@
         },
         {
           "angle": 0,
-          "customSize": false,
-          "height": 0,
+          "customSize": true,
+          "depth": 48,
+          "height": 101,
           "keepRatio": true,
           "layer": "",
-          "name": "BlueButton",
+          "name": "BlueButtonMoveTowardFirstPos",
           "persistentUuid": "2bf54654-40f2-47fa-9b67-264bc114c587",
-          "width": 0,
+          "width": 320,
           "x": 576,
-          "y": 576,
+          "y": 571,
           "zOrder": 9,
           "numberProperties": [],
           "stringProperties": [],
@@ -619,7 +621,7 @@
       "objects": [
         {
           "assetStoreId": "5f0df6131c9646dcbe98798196db5b6d806eb25564f86d2e119a084d1e20bf74",
-          "name": "Button",
+          "name": "ButtonMoveToLeft",
           "type": "PanelSpriteButton::PanelSpriteButton",
           "variables": [
             {
@@ -665,7 +667,7 @@
               "italic": false,
               "smoothed": true,
               "underlined": false,
-              "string": "Button",
+              "string": "Move items to left",
               "font": "ArchitectsDaughter.ttf",
               "textAlignment": "center",
               "characterSize": 22,
@@ -688,7 +690,7 @@
                 "shadowOpacity": 127,
                 "smoothed": true,
                 "underlined": false,
-                "text": "Button",
+                "text": "Move items to left",
                 "font": "ArchitectsDaughter.ttf",
                 "textAlignment": "center",
                 "characterSize": 22,
@@ -928,7 +930,7 @@
         },
         {
           "assetStoreId": "33302f0b615672a2e96316c096e13ad8d7242adba8bd5709538691894f0eae6e",
-          "name": "BlueButton",
+          "name": "BlueButtonMoveTowardFirstPos",
           "type": "PanelSpriteButton::PanelSpriteButton",
           "variables": [],
           "effects": [],
@@ -967,10 +969,10 @@
               "italic": false,
               "smoothed": true,
               "underlined": false,
-              "string": "BUTTON",
+              "string": "Move items toward the first position",
               "font": "CantoraOne-Regular.ttf",
               "textAlignment": "center",
-              "characterSize": 40,
+              "characterSize": 30,
               "color": {
                 "b": 255,
                 "g": 255,
@@ -990,10 +992,10 @@
                 "shadowOpacity": 127,
                 "smoothed": true,
                 "underlined": false,
-                "text": "BUTTON",
+                "text": "Move items toward the first position",
                 "font": "CantoraOne-Regular.ttf",
                 "textAlignment": "center",
-                "characterSize": 40,
+                "characterSize": 30,
                 "color": "255;255;255"
               }
             },
@@ -1014,7 +1016,7 @@
         "folderName": "__ROOT",
         "children": [
           {
-            "objectName": "Button"
+            "objectName": "ButtonMoveToLeft"
           },
           {
             "objectName": "Slot"
@@ -1023,7 +1025,7 @@
             "objectName": "Item"
           },
           {
-            "objectName": "BlueButton"
+            "objectName": "BlueButtonMoveTowardFirstPos"
           }
         ]
       },
@@ -1139,7 +1141,7 @@
                 "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
               },
               "parameters": [
-                "Button",
+                "ButtonMoveToLeft",
                 ""
               ]
             }
@@ -1226,7 +1228,7 @@
                 "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
               },
               "parameters": [
-                "BlueButton",
+                "BlueButtonMoveTowardFirstPos",
                 ""
               ]
             }
@@ -1469,10 +1471,6 @@
         {
           "name": "Scale",
           "type": "ScalableCapability::ScalableBehavior"
-        },
-        {
-          "name": "Text",
-          "type": "TextContainerCapability::TextContainerBehavior"
         },
         {
           "name": "Tween",
