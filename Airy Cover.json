@@ -253,7 +253,7 @@
           "name": "ButtonMoveToLeft",
           "persistentUuid": "c37b7f2c-d4f4-4736-a0a0-2760001e0a7e",
           "width": 192,
-          "x": 352,
+          "x": 704,
           "y": 576,
           "zOrder": 1,
           "numberProperties": [],
@@ -380,14 +380,14 @@
           "angle": 0,
           "customSize": true,
           "depth": 48,
-          "height": 101,
+          "height": 96,
           "keepRatio": true,
           "layer": "",
           "name": "BlueButtonMoveTowardFirstPos",
           "persistentUuid": "2bf54654-40f2-47fa-9b67-264bc114c587",
           "width": 320,
-          "x": 576,
-          "y": 571,
+          "x": 352,
+          "y": 576,
           "zOrder": 9,
           "numberProperties": [],
           "stringProperties": [],
@@ -718,37 +718,6 @@
           "variables": [
             {
               "folded": true,
-              "name": "shoot_speed",
-              "type": "number",
-              "value": 456
-            },
-            {
-              "name": "qwerty",
-              "type": "array",
-              "children": [
-                {
-                  "type": "number",
-                  "value": 1
-                },
-                {
-                  "folded": true,
-                  "type": "number",
-                  "value": 2
-                },
-                {
-                  "folded": true,
-                  "type": "number",
-                  "value": 3
-                },
-                {
-                  "folded": true,
-                  "type": "number",
-                  "value": 4
-                }
-              ]
-            },
-            {
-              "folded": true,
               "name": "ID",
               "type": "number",
               "value": 0
@@ -1031,158 +1000,150 @@
       },
       "events": [
         {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Add IDs to the slots",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
             {
-              "type": {
-                "value": "DepartScene"
-              },
-              "parameters": [
-                ""
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "DepartScene"
+                  },
+                  "parameters": [
+                    ""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::ForEach",
+                  "object": "Slot",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberObjectVariable"
+                      },
+                      "parameters": [
+                        "Slot",
+                        "ID",
+                        "=",
+                        "Counter"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Counter",
+                        "+",
+                        "1"
+                      ]
+                    }
+                  ]
+                }
               ]
             }
           ],
-          "actions": [],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Move items towards the first position, check each slot, add ID to object, put objects in slot with the same ID",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
           "events": [
             {
-              "type": "BuiltinCommonInstructions::ForEach",
-              "object": "Slot",
-              "conditions": [],
-              "actions": [
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
                 {
                   "type": {
-                    "value": "SetNumberObjectVariable"
+                    "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
                   },
                   "parameters": [
-                    "Slot",
-                    "ID",
-                    "=",
-                    "Counter"
+                    "BlueButtonMoveTowardFirstPos",
+                    ""
                   ]
-                },
+                }
+              ],
+              "actions": [
                 {
                   "type": {
                     "value": "SetNumberVariable"
                   },
                   "parameters": [
                     "Counter",
-                    "+",
-                    "1"
+                    "=",
+                    "0"
                   ]
                 }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": []
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": []
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "DraggableBehavior::Dropped"
-              },
-              "parameters": [
-                "Item",
-                "Draggable"
-              ]
-            },
-            {
-              "type": {
-                "value": "CollisionNP"
-              },
-              "parameters": [
-                "Item",
-                "Slot",
-                "",
-                "",
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "MettreAutour"
-              },
-              "parameters": [
-                "Item",
-                "Slot",
-                "0",
-                "0"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": []
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": []
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
-              },
-              "parameters": [
-                "ButtonMoveToLeft",
-                ""
-              ]
-            }
-          ],
-          "actions": [],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::ForEach",
-              "object": "Slot",
-              "conditions": [],
-              "actions": [],
+              ],
               "events": [
                 {
-                  "type": "BuiltinCommonInstructions::Standard",
+                  "type": "BuiltinCommonInstructions::ForEach",
+                  "object": "Slot",
                   "conditions": [
                     {
                       "type": {
-                        "inverted": true,
                         "value": "CollisionNP"
                       },
                       "parameters": [
-                        "Slot",
                         "Item",
+                        "Slot",
                         "",
                         "",
                         ""
                       ]
-                    },
+                    }
+                  ],
+                  "actions": [
                     {
                       "type": {
-                        "value": "Raycast"
+                        "value": "SetNumberObjectVariable"
                       },
                       "parameters": [
                         "Item",
-                        "Slot.X()",
-                        "Slot.Y()",
-                        "0",
-                        "8000",
-                        "",
-                        "",
-                        ""
+                        "ID",
+                        "=",
+                        "Counter"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Counter",
+                        "+",
+                        "1"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::ForEach",
+                  "object": "Item",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberObjectVariable"
+                      },
+                      "parameters": [
+                        "Slot",
+                        "ID",
+                        "=",
+                        "Item.ID"
                       ]
                     }
                   ],
@@ -1203,53 +1164,114 @@
                 }
               ]
             }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": []
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": []
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": []
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
-              },
-              "parameters": [
-                "BlueButtonMoveTowardFirstPos",
-                ""
-              ]
-            }
           ],
-          "actions": [
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "Counter",
-                "=",
-                "0"
-              ]
-            }
-          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Move items to the left, if slot is empty, cast ray to right, move item to position",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
           "events": [
             {
-              "type": "BuiltinCommonInstructions::ForEach",
-              "object": "Slot",
+              "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
+                {
+                  "type": {
+                    "value": "PanelSpriteButton::PanelSpriteButton::IsClicked"
+                  },
+                  "parameters": [
+                    "ButtonMoveToLeft",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::ForEach",
+                  "object": "Slot",
+                  "conditions": [],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": true,
+                            "value": "CollisionNP"
+                          },
+                          "parameters": [
+                            "Slot",
+                            "Item",
+                            "",
+                            "",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Raycast"
+                          },
+                          "parameters": [
+                            "Item",
+                            "Slot.X()",
+                            "Slot.Y()",
+                            "0",
+                            "1000",
+                            "",
+                            "",
+                            ""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "MettreXY"
+                          },
+                          "parameters": [
+                            "Item",
+                            "=",
+                            "Slot.X()",
+                            "=",
+                            "Slot.Y()"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "drag and drop the items",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "DraggableBehavior::Dropped"
+                  },
+                  "parameters": [
+                    "Item",
+                    "Draggable"
+                  ]
+                },
                 {
                   "type": {
                     "value": "CollisionNP"
@@ -1260,46 +1282,6 @@
                     "",
                     "",
                     ""
-                  ]
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "value": "SetNumberObjectVariable"
-                  },
-                  "parameters": [
-                    "Item",
-                    "ID",
-                    "=",
-                    "Counter"
-                  ]
-                },
-                {
-                  "type": {
-                    "value": "SetNumberVariable"
-                  },
-                  "parameters": [
-                    "Counter",
-                    "+",
-                    "1"
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "BuiltinCommonInstructions::ForEach",
-              "object": "Item",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "NumberObjectVariable"
-                  },
-                  "parameters": [
-                    "Slot",
-                    "ID",
-                    "=",
-                    "Item.ID"
                   ]
                 }
               ],
@@ -1318,52 +1300,8 @@
                 }
               ]
             }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": []
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": []
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": []
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": []
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": []
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": []
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": []
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": []
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": []
+          ],
+          "parameters": []
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
